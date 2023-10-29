@@ -1,0 +1,28 @@
+{
+    "name": "tlg2-prototype",
+    "version": "0.0.0",
+    "description": "The Less Genius Game prototype",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^2.4.2",
+        "eslint": "^8.48.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-svelte": "^2.33.0",
+        "prettier": "3.0.3",
+        "prettier-plugin-svelte": "^3.0.3",
+        "svelte": "^4.0.5",
+        "vite": "^4.4.9"
+    },
+    "dependencies": {
+        "bresenham": "^0.0.4",
+        "eventemitter3": "^5.0.1",
+        "peerjs": "^1.5.0",
+        "shuffle-array": "^1.0.1",
+        "tinycolor2": "^1.6.0"
+    }
+}
