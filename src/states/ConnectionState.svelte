@@ -51,7 +51,11 @@
         } finally {
             // Reset url (without refreshing!) to prevent accidental connections.
             if (new URLSearchParams(location.search).get("id")) {
-                history.replaceState({}, document.title, location.origin);
+                history.replaceState(
+                    {},
+                    document.title,
+                    `${location.origin}${location.pathname}`,
+                );
             }
         }
     }
