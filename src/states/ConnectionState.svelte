@@ -27,15 +27,12 @@
     function handleHasId(id) {
         selfId = id;
 
-        if (location.pathname === "/connect") {
-            const params = new URLSearchParams(location.search);
-            const peerId = params.get("id");
+        const peerId = new URLSearchParams(location.search).get("id");
 
-            // TODO: Switch url to one w/o pathname if id is invalid
-            if (peerId) {
-                // TODO: Uneeded layering lol
-                handleConnect({ detail: peerId });
-            }
+        if (peerId) {
+            // TODO: Switch url to one w/o peerId if id is invalid
+            // TODO: Uneeded layering lol
+            handleConnect({ detail: peerId });
         }
     }
 
@@ -51,6 +48,11 @@
             }
 
             throw e;
+        } finally {
+            // Reset url (without refreshing!) to prevent accidental connections.
+            if (new URLSearchParams(location.search).get("id")) {
+                history.replaceState({}, document.title, location.origin);
+            }
         }
     }
 
