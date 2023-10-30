@@ -21,7 +21,10 @@
     -->
     <div class="section">
         <p>Your ID is: <em>{selfIdDisplay}</em>.</p>
-        <p>Join link: <em>{location.origin}?id={selfId}</em>.</p>
+        <p>
+            Join link:
+            <em>{location.origin}{location.pathname}?id={selfId}</em>.
+        </p>
         <p>Connect with another player or wait to be connected to.</p>
     </div>
 
